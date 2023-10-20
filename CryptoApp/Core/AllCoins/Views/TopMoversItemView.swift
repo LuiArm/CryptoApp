@@ -9,7 +9,23 @@ import SwiftUI
 
 struct TopMoversItemView: View {
     var body: some View {
-        Text("TOP MOVERS ITEM VIEW")
+        VStack {
+            // image
+            Image(systemName: "bitcoin.circle.fill")
+                .resizable()
+                .frame(width: 32, height: 32)
+                .foregroundStyle(.orange)
+            
+            // coin info
+            HStack {
+                Text(
+            }
+            
+            
+            // coin percent change
+            
+            
+        }
     }
 }
 

@@ -9,7 +9,19 @@ import SwiftUI
 
 struct TopMoversView: View {
     var body: some View {
-        Text("TOP MOVERS VIEW")
+        VStack {
+            Text("Top Movers")
+                .font(.title2)
+            
+            ScrollView(.horizontal){
+                HStack{
+                    ForEach(0..<10, id: \.self){ _ in
+                        TopMoversItemView()
+                    }
+                }
+            }
+        }
+        .padding()
     }
 }
 

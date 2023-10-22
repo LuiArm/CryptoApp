@@ -9,7 +9,32 @@ import SwiftUI
 
 struct AllCoinsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("All Coins")
+                .font(.headline)
+                .padding()
+            
+            HStack {
+                Text("Coin")
+                
+                Spacer()
+                
+                Text("Prices")
+            }
+            .foregroundStyle(.gray)
+            .font(.caption)
+            .padding(.horizontal)
+            
+            ScrollView{
+                VStack{
+                    ForEach(0...50, id: \.self) { _ in
+                        CoinCell()
+                    }
+                }
+            }
+          
+        }
+        
     }
 }
 

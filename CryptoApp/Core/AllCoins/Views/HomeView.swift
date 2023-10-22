@@ -15,6 +15,7 @@ struct HomeView: View {
                 
                 Divider()
             
+                AllCoinsView()
                 
             }
             .navigationTitle("CRyPtO")

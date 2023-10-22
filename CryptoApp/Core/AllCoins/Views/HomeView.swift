@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var vm = CoinsViewModel()
+    
     var body: some View {
         NavigationStack {
             ScrollView {

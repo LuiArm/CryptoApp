@@ -16,7 +16,9 @@ class CoinDataService {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let coins = try JSONDecoder().decode([Coin].self, from: data)
+            
             return coins
+            
         } catch {
             print("DEBUG: Error \(error.localizedDescription)")
             return []
@@ -24,6 +26,7 @@ class CoinDataService {
         }
         
     }
+
 }
 
 

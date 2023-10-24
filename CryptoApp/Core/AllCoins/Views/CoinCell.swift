@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct CoinCell: View {
+    let coin: Coin
+    
     var body: some View {
         HStack{
             //market cap rank
-            Text("1")
+            Text("\(coin.marketCapRank ?? 1,specifier: "%.2f")")
                 .font(.caption)
                 .foregroundStyle(.gray)
             
@@ -26,13 +28,13 @@ struct CoinCell: View {
             
             // coin name info
             VStack(alignment: .leading, spacing: 4) {
-                Text("BitCoin")
+                Text(coin.name)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
                 
                 
-                Text("BTC")
+                Text(coin.symbol.uppercased())
                     .font(.caption)
                     .padding(.leading, 6)
             }
@@ -45,13 +47,13 @@ struct CoinCell: View {
             // coin price info
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("$20,330.00")
+                Text("$\(coin.currentPrice,specifier: "%.2f")")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
                 
                 
-                Text("-5.60%")
+                Text("\(coin.priceChangePercentage24H,specifier: "%.2f")%")
                     .font(.caption)
                     .padding(.leading, 6)
                     .foregroundStyle(.red)
@@ -63,6 +65,6 @@ struct CoinCell: View {
     }
 }
 
-#Preview {
-    CoinCell()
-}
+//#Preview {
+//    CoinCell()
+//}

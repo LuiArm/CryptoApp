@@ -13,11 +13,11 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                TopMoversView()
+                TopMoversView(vm: vm)
                 
                 Divider()
             
-                AllCoinsView()
+                AllCoinsView(vm: vm)
                 
             }
             .navigationTitle("CRyPtO")

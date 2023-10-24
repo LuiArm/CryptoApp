@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AllCoinsView: View {
+    @StateObject var vm: CoinsViewModel
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("All Coins")
@@ -27,8 +29,8 @@ struct AllCoinsView: View {
             
             ScrollView{
                 VStack{
-                    ForEach(0...50, id: \.self) { _ in
-                        CoinCell()
+                    ForEach(vm.coins) { coin in
+                        CoinCell(coin: coin)
                     }
                 }
             }
@@ -38,6 +40,6 @@ struct AllCoinsView: View {
     }
 }
 
-#Preview {
-    AllCoinsView()
-}
+//#Preview {
+//    AllCoinsView()
+//}
